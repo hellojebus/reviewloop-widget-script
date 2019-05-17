@@ -29,11 +29,11 @@ let determineStarRating = (rating) => {
 
 
 let fetchData = (location_id) => {
-    fetch(`https://www.reviewloop.app/v1/public/locations/${locationId}/featuredReviews`)
+    fetch(`https://api.reviewloop.app/v1/public/widget/${location_id}`)
         .then(response => response.json())
         .then(response => {
             // If the response has an error or the length of data is 0, don't execute the script.
-            if (response.error === true || response.data.length === 0) {
+            if (response.error === true || response.data.reviewslength === 0) {
                 return null;
             } else {
                 let link = document.createElement("link");
@@ -51,7 +51,7 @@ let fetchData = (location_id) => {
                 </div>`;
                 scriptLocation.insertAdjacentHTML('afterend', slideHTML)
                 let slideContainer = document.getElementsByClassName('slider');
-                response.data.forEach(review => {
+                response.data.reviews.forEach(review => {
                     if (review.review === null) {
                         review.review = "";
                     }
