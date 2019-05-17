@@ -43,7 +43,7 @@ let fetchData = (location_id) => {
                 link.rel = "stylesheet";
                 link.media = "screen,print";
                 document.getElementsByTagName("head")[0].appendChild(link);
-                
+
                 let scriptLocation = document.getElementsByName('locationInfo')[0];
                 let slideHTML = ` 
                 <div class="slider">
