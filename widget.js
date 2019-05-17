@@ -29,7 +29,7 @@ let determineStarRating = (rating) => {
 
 
 let fetchData = (location_id) => {
-    fetch(`http://localhost:1337/v1/public/locations/${locationId}/featuredReviews`)
+    fetch(`https://www.reviewloop.app/v1/public/locations/${locationId}/featuredReviews`)
         .then(response => response.json())
         .then(response => {
             // If the response has an error or the length of data is 0, don't execute the script.
