@@ -11,15 +11,25 @@
 </head>
 
 <body>
-    <div class="glider-contain multiple">
-        <div class="glider">
+    <h1>Some header</h1>
 
-        </div>
-        <div role="tablist" class="dots"></div>
-    </div>
+    <h2>Other Content</h2>
+    <h3>NEW CONTENT</h3>
+    <script>
+        (function (w, d, s, o, f, locId) {
+            w['JS-Widget'] = o;
+            w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o;
+            js.setAttribute("name", "locationInfo");
+            js.setAttribute("content", locId);
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'mw', './widget.js', 59));
+    </script>
+    <h3>Should be above me</h3>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-    <script src="./widget.js"></script>
 </body>
 
 </html>
