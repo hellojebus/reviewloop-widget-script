@@ -42,7 +42,7 @@ let fetchData = (location_id) => {
                 link.id = "tresio-ada-css";
                 link.rel = "stylesheet";
                 link.media = "screen,print";
-                //document.getElementsByTagName("head")[0].appendChild(link);
+                document.getElementsByTagName("head")[0].appendChild(link);
 
                 let scriptLocation = document.getElementsByName('locationInfo')[0];
                 let slideHTML = ` 
