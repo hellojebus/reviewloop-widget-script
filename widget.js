@@ -46,30 +46,33 @@ let fetchData = (location_id) => {
 
                 let scriptLocation = document.getElementsByName('locationInfo')[0];
                 let slideHTML = ` 
-                <div class="slider">
+                <div class="rl-slider">
                
                 </div>`;
-                scriptLocation.insertAdjacentHTML('afterend', slideHTML)
-                let slideContainer = document.getElementsByClassName('slider');
+                scriptLocation.insertAdjacentHTML('afterend', slideHTML);
+                let slideContainer = document.getElementsByClassName('rl-slider');
                 response.data.reviews.forEach(review => {
                     if (review.review === null) {
                         review.review = "";
                     }
                     var cardHtml =
                         `
-                        <div class="review-widget-container">
-                            <div class="review-widget-head">
-                                <div class="review-person-name">
-                                    <span>${review.customer.first_name} ${review.customer.last_name}</span>
+                        <div>
+                            <div class="review-widget-container">
+                                <div class="review-widget-head">
+                                    <div class="review-person-name">
+                                        <span>${review.customer.first_name} ${review.customer.last_name}</span>
+                                    </div>
+                                    <div class="star-container">
+                                        ${determineStarRating(review.rating)}
+                                    </div>
                                 </div>
-                                <div class="star-container">
-                                    ${determineStarRating(review.rating)}
+                                <div class="review-widget-review">
+                                    ${review.review}
                                 </div>
                             </div>
-                            <div class="review-widget-review">
-                                ${review.review}
-                            </div>
-                        </div>`;
+                        </div>
+                        `;
 
                     slideContainer[0].insertAdjacentHTML('beforeend', cardHtml)
                 })
@@ -88,23 +91,20 @@ var locationId = element.getAttribute('content')
 fetchData(locationId);
 
 let runTinySlider = () => {
-    var slider = tns({
-        container: '.slider',
-        items: 1,
-        mode: "carousel",
-        //controlsContainer: true,
-        nav: false,
-        slideBy: 1,
-        autoplayButton: false,
-        autoplay: false,
-        autoplayHoverPause: true,
-        mouseDrag: false,
-        fixedWidth: 352,
-        speed: 200,
-        center: false,
-        controls: true,
-        animateDelay: 4,
-    });
+
+    var slider= tns({
+      container: ".rl-slider",
+      items: (window.innerWidth < 800 ? 1.2 : 3.1),
+      mode: "carousel",
+      slideBy: 1,
+      mouseDrag: true,
+      swipeAngle: false,
+      speed: 400,
+      gutter: 30,
+      nav: false,
+      controls: true,
+      loop: true
+    })
 }
 
 var tns = (function () {
