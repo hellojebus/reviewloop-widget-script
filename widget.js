@@ -75,7 +75,7 @@ let fetchData = (location_id) => {
                 })
                 let reviewLoopLogo = ` 
                     <div class="review-widget-logo">
-                        <p>Powered by </p><a target="_blank" href="https://www.reviewloop.app/?utm_source=studio3marketing.com&utm_medium=widget/"><img class="review-loop-logo" src="https://rl.tresio.co/img/logo-color.svg"/></a>
+                        <span>Powered by </span><a target="_blank" href="https://www.reviewloop.app/?utm_source=studio3marketing.com&utm_medium=widget"><img class="review-loop-logo" src="https://rl.tresio.co/img/logo-color.svg"/></a>
                     </div>`
                 slideContainer[0].insertAdjacentHTML('afterend', reviewLoopLogo)
                 runTinySlider();
@@ -90,19 +90,19 @@ fetchData(locationId);
 let runTinySlider = () => {
     var slider = tns({
         container: '.slider',
-        items: 3,
+        items: 1,
         mode: "carousel",
-        controlsContainer: false,
+        //controlsContainer: true,
         nav: false,
         slideBy: 1,
         autoplayButton: false,
-        autoplay: true,
+        autoplay: false,
         autoplayHoverPause: true,
         mouseDrag: false,
         fixedWidth: 352,
         speed: 200,
         center: true,
-        controls: false,
+        controls: true,
         animateDelay: 4,
     });
 }
@@ -1612,7 +1612,7 @@ var tns = (function () {
             // == controlsInit ==
             if (hasControls) {
                 if (!controlsContainer && (!prevButton || !nextButton)) {
-                    outerWrapper.insertAdjacentHTML(getInsertPosition(options.controlsPosition), '<div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button data-controls="prev" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[0] + '</button><button data-controls="next" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[1] + '</button></div>');
+                    outerWrapper.insertAdjacentHTML(getInsertPosition(options.controlsPosition), '<div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button class="rl-prev rl-nav-btn" data-controls="prev" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[0] + '</button><button class="rl-next rl-nav-btn" data-controls="next" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[1] + '</button></div>');
 
                     controlsContainer = outerWrapper.querySelector('.tns-controls');
                 }
