@@ -42,7 +42,7 @@ let fetchData = (location_id) => {
                 link.id = "tresio-ada-css";
                 link.rel = "stylesheet";
                 link.media = "screen,print";
-                document.getElementsByTagName("head")[0].appendChild(link);
+                //document.getElementsByTagName("head")[0].appendChild(link);
 
                 let scriptLocation = document.getElementsByName('locationInfo')[0];
                 let slideHTML = ` 
@@ -75,7 +75,7 @@ let fetchData = (location_id) => {
                 })
                 let reviewLoopLogo = ` 
                     <div class="review-widget-logo">
-                        <p>Powered by </p><a target="_blank" href="https://www.reviewloop.app/?utm_source=studio3marketing.com&utm_medium=widget/"><img class="review-loop-logo" src="https://rl.tresio.co/img/logo-color.svg"/></a>
+                        <span>Powered by </span><a target="_blank" href="https://www.reviewloop.app/?utm_source=studio3marketing.com&utm_medium=widget"><img class="review-loop-logo" src="https://rl.tresio.co/img/logo-color.svg"/></a>
                     </div>`
                 slideContainer[0].insertAdjacentHTML('afterend', reviewLoopLogo)
                 runTinySlider();
@@ -92,17 +92,17 @@ let runTinySlider = () => {
         container: '.slider',
         items: 3,
         mode: "carousel",
-        controlsContainer: false,
+        //controlsContainer: true,
         nav: false,
         slideBy: 1,
         autoplayButton: false,
-        autoplay: true,
+        autoplay: false,
         autoplayHoverPause: true,
         mouseDrag: false,
         fixedWidth: 352,
         speed: 200,
         center: true,
-        controls: false,
+        controls: true,
         animateDelay: 4,
     });
 }
