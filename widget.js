@@ -90,7 +90,7 @@ fetchData(locationId);
 let runTinySlider = () => {
     var slider = tns({
         container: '.slider',
-        items: 3,
+        items: 1,
         mode: "carousel",
         //controlsContainer: true,
         nav: false,
@@ -1612,7 +1612,7 @@ var tns = (function () {
             // == controlsInit ==
             if (hasControls) {
                 if (!controlsContainer && (!prevButton || !nextButton)) {
-                    outerWrapper.insertAdjacentHTML(getInsertPosition(options.controlsPosition), '<div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button data-controls="prev" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[0] + '</button><button data-controls="next" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[1] + '</button></div>');
+                    outerWrapper.insertAdjacentHTML(getInsertPosition(options.controlsPosition), '<div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button class="rl-prev rl-nav-btn" data-controls="prev" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[0] + '</button><button class="rl-next rl-nav-btn" data-controls="next" tabindex="-1" aria-controls="' + slideId + '">' + controlsText[1] + '</button></div>');
 
                     controlsContainer = outerWrapper.querySelector('.tns-controls');
                 }
