@@ -9,6 +9,10 @@
     background: #fbfbfb;
 }
 
+.tns-inner {
+    padding: 20px;
+}
+
 .tns-controls {
     position: absolute;
     top: 50%;
@@ -22,6 +26,7 @@
     z-index: 99;
     height: 60px;
     outline: 0 !important;
+    pointer-events: none;
 }
 
 .widget-container{
@@ -102,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: -37px;
+    margin-top: -50px;
     margin-right: 20px
 }
 .tns-outer button {
@@ -125,6 +130,7 @@
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.28);
     outline: 0;
+    pointer-events: all;
 
     -webkit-transition: all 250ms ease-in-out;
     -moz-transition: all 250ms ease-in-out;
@@ -141,12 +147,12 @@
 }
 
 .rl-prev {
-    left: 20px;
+    left: 0 !important;
     background-image: url(https://s3-us-west-2.amazonaws.com/tresio-rl/arrow-left.png);
 }
 
 .rl-next {
-    right: 20px;
+    right: 0 !important;
     background-image: url(https://s3-us-west-2.amazonaws.com/tresio-rl/arrow-right.png)
 }
 
