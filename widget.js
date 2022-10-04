@@ -78,7 +78,7 @@ let fetchData = (location_id) => {
                 })
                 let reviewLoopLogo = ` 
                     <div class="review-widget-logo">
-                        <span>Powered by </span><a target="_blank" href="https://www.reviewloop.app/?utm_source=${window.location.hostname}&utm_medium=widget"><img class="review-loop-logo" src="https://rl.tresio.co/img/logo-color.svg"/></a>
+                        <span>Powered by </span><a target="_blank" aria-label="Navigates to the website of ReviewLoop" href="https://www.reviewloop.app/?utm_source=${window.location.hostname}&utm_medium=widget"><img class="review-loop-logo" width="68" height="14" alt="ReviewLoop Logo" src="https://rl.tresio.co/img/logo-color.svg"/></a>
                     </div>`
                 slideContainer[0].insertAdjacentHTML('afterend', reviewLoopLogo)
                 runTinySlider();
